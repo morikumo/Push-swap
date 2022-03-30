@@ -65,7 +65,7 @@ int	len_list(t_stack *stack_a)
 	return (i);
 }
 
-int		error_exit(int a)
+int	error_exit(int a)
 {
 	if (a == 0)
 	{
@@ -93,20 +93,20 @@ long	ft_atol(const char *str)
 	negatif = 1;
 	resultat = 0;
 	while (str[++i])
-    {
-        if(!((ft_isdigit(str[i]) == 1) || (str[i] == '-') 
-		|| (str[i] == ' ')))
-			return(error_exit(0));
-        else if(str[i] == '-' && (!(ft_isdigit(str[i + 1]) == 1) 
-		|| (ft_isdigit(str[i - 1]) == 1)))
-			return(error_exit(0));
-        else if(str[i] == '-')
-            negatif = -negatif;
-        if(ft_isdigit(str[i]) == 1)
-            resultat = resultat * 10 + str[i] - 48;
-    }
-	if(((negatif * resultat) > (2147483647)) 
-	|| ((negatif * resultat) < (-2147483648)) )
-		return(error_exit(0));
+	{
+		if (!((ft_isdigit(str[i]) == 1) || (str[i] == '-')
+				|| (str[i] == ' ')))
+			return (error_exit(0));
+		else if (str[i] == '-' && (!(ft_isdigit(str[i + 1]) == 1)
+				|| (ft_isdigit(str[i - 1]) == 1)))
+			return (error_exit(0));
+		else if (str[i] == '-')
+			negatif = -negatif;
+		if (ft_isdigit(str[i]) == 1)
+			resultat = resultat * 10 + str[i] - 48;
+	}
+	if (((negatif * resultat) > (2147483647))
+		|| ((negatif * resultat) < (-2147483648)))
+		return (error_exit(0));
 	return (resultat * negatif);
 }

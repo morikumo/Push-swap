@@ -39,7 +39,7 @@ int	get_group(t_stack *stack, int *tab, int size)
 	tab = value_pos(tab, size);
 	if (size >= 150)
 		index = size / 15;
-	else if (size <= 150 && size >=50)
+	else if (size <= 150 && size >= 50)
 		index = size / 7;
 	else
 		index = size / 5;
@@ -63,8 +63,8 @@ int	get_group(t_stack *stack, int *tab, int size)
  * par la fonction  max_stack_b_push_a.
  * Le tri est terminer
  * 
- * get_group a ete deplacer dans le while pour plus de precisions lors du clacul de la mediane.
- * 
+ * get_group a ete deplacer dans le while 
+ * pour plus de precisions lors du clacul de la mediane.
  * @param stack_a 
  * @param stack_b 
  * @param size 
