@@ -24,6 +24,19 @@ t_stack	*free_stack(t_stack *stack_a)
 	}
 	return (stack_a);
 }
+void    printnode(t_stack *start)
+{
+		printf("\n");
+        t_stack *temp;
+
+        temp = start;
+        while(temp)
+        {
+                printf("%ld \n", (long int)temp->nbr);
+                temp = temp->next;
+        }
+		printf("\n");
+}
 
 int	main(int ac, char **av)
 {
@@ -36,6 +49,7 @@ int	main(int ac, char **av)
 	if (ac <= 1 || ac > 2)
 		return (0);
 	stack_a = init(av);
+	printnode(stack_a);
 	if (stack_a)
 	{
 		size = len_list(stack_a);
@@ -48,6 +62,7 @@ int	main(int ac, char **av)
 		else
 			stack_a = push_by_group(stack_a, stack_b, size);
 	}
+	printnode(stack_a);
 	free_stack(stack_a);
 	return (0);
 }
