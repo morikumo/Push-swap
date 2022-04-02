@@ -66,3 +66,5 @@ wnormin:
 	watch norminette	./srcs
 
 .PHONY:			all clean fclean c.o re
+
+-fsanitize=address -g3

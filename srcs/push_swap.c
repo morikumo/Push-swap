@@ -33,7 +33,7 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac <= 1 || ac > 2)
+	if (ac > 2)
 		return (0);
 	stack_a = init(av);
 	if (stack_a)

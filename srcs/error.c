@@ -57,13 +57,13 @@ void	check_str(char *str)
 		stock = ft_atol(str);
 		if (stock > 2147483647 || stock < -2147483648)
 		{
-			ft_putstr("Error av too large\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		if (ft_isdigit(str[i]) == 0
 			&& ft_white_space(str[i]) && str[i] != '-')
 		{
-			ft_putstr("Error av arn't a correct one\n");
+			ft_putstr("Error\n");
 			exit(1);
 		}
 		i++;
@@ -93,7 +93,7 @@ void	check_doublon(t_stack *stack_a)
 		{
 			if (nbr == compare->nbr)
 			{
-				ft_putstr("Error double av\n");
+				ft_putstr("Error\n");
 				exit (1);
 			}
 			compare = compare->next;
