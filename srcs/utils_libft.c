@@ -65,16 +65,6 @@ int	len_list(t_stack *stack_a)
 	return (i);
 }
 
-int	error_exit(int a)
-{
-	if (a == 0)
-	{
-		ft_putstr("Error\n");
-		exit(0);
-	}
-	return (0);
-}
-
 /**
  * @brief Un atoi pour les long. 
  * Va nous permettre de prendre en compte 
@@ -96,10 +86,10 @@ long	ft_atol(const char *str)
 	{
 		if (!((ft_isdigit(str[i]) == 1) || (str[i] == '-')
 				|| (str[i] == ' ')))
-			return (error_exit(0));
-		else if (str[i] == '-' && (!(ft_isdigit(str[i + 1]) == 1)
+			return (0);
+		else if (i != 0 && str[i - 1] && str[i] && str[i+1]  && str[i] == '-' && (!(ft_isdigit(str[i + 1]) == 1)
 				|| (ft_isdigit(str[i - 1]) == 1)))
-			return (error_exit(0));
+			return (0);
 		else if (str[i] == '-')
 			negatif = -negatif;
 		if (ft_isdigit(str[i]) == 1)
@@ -107,6 +97,6 @@ long	ft_atol(const char *str)
 	}
 	if (((negatif * resultat) > (2147483647))
 		|| ((negatif * resultat) < (-2147483648)))
-		return (error_exit(0));
+		return (error_(0));
 	return (resultat * negatif);
 }

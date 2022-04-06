@@ -31,13 +31,13 @@ t_stack	*new_element_tab(char **av)
 	j = 0;
 	while (tab[j])
 	{
-		check_str(tab[j]);
-		if (!stack_a)
+		//check_str(tab[j]);
+		if (check_str(tab[j]) && (!stack_a))
 		{
 			stack_a = new_element(ft_atol(tab[j]));
 			tmp = stack_a;
 		}
-		else
+		else if (check_str(tab[j]))
 		{
 			tmp->next = new_element(ft_atol(tab[j]));
 			tmp = tmp->next;
@@ -63,9 +63,8 @@ t_stack	*init(char **av)
 	{
 		if (check_next(stack_a) == 1)
 		{
-			ft_putstr("Error\n");
-			free (stack_a);
-			exit(1);
+			free(stack_a);
+			error_exit(0);
 		}
 		check_doublon(stack_a);
 	}

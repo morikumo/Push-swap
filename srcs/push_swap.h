@@ -84,6 +84,10 @@ int			ft_white_space(char c);
 void		check_str(char *str);
 void		check_doublon(t_stack *stack_a);
 int			check_next(t_stack *stack_a);
+int			error_(int a);
+int			error_exit(int a);
+int			error_exit_free(int a, t_stack *stack_a);
+int			zero(int a);
 
 /*----------------------------------------------------------------------*/
 

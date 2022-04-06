@@ -36,6 +36,7 @@ int	main(int ac, char **av)
 	if (ac > 2)
 		return (0);
 	stack_a = init(av);
+	printf("sortie\n");
 	if (stack_a)
 	{
 		size = len_list(stack_a);

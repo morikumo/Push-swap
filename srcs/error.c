@@ -51,21 +51,18 @@ void	check_str(char *str)
 	int		i;
 	long	stock;
 
+
 	i = 0;
 	while (str[i])
 	{
 		stock = ft_atol(str);
+		if(!stock)
+			zero(0);
 		if (stock > 2147483647 || stock < -2147483648)
-		{
-			ft_putstr("Error\n");
-			exit(1);
-		}
+			zero(0);
 		if (ft_isdigit(str[i]) == 0
 			&& ft_white_space(str[i]) && str[i] != '-')
-		{
-			ft_putstr("Error\n");
-			exit(1);
-		}
+			zero(0);
 		i++;
 	}
 }
@@ -94,6 +91,7 @@ void	check_doublon(t_stack *stack_a)
 			if (nbr == compare->nbr)
 			{
 				ft_putstr("Error\n");
+				free_stack(stack_a);
 				exit (1);
 			}
 			compare = compare->next;

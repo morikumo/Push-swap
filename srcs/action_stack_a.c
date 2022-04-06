@@ -47,7 +47,7 @@ t_stack	*push_a(t_stack *stack_a, t_stack *stack_b)
 }
 
 /**
- * @brief Dans une meme pile le chiffre du haut et deplacer en bas.
+ * @brief Dans une meme pile le chiffre du haut est deplacer en bas.
  * Le chiffre suivant devient celui en tete. 
  * 
  * @param stack_a 

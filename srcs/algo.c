@@ -17,8 +17,8 @@
  * 	Etape 1 : Recupere un tableau d'INT avec la taille de la liste 
  * et ces elements dedans. (tab_int)
  * 	Etape 2 : Place la position de chaque elements dans le tableau.(value_sort)
- * 	Etape 3 : Si nous avons plus de 500 elements nous coupons l'index 
- * en 7 parties pour trié en 7 temps. Sinon ça ne se fera qu'en 5 partie.
+ * 	Etape 3 : Si nous avons plus de 150 elements nous coupons l'index 
+ * en 15 parties pour trié en 15 temps. Sinon ça ne se fera qu'en 7 ou 5 partie.
  * 	Etape 4 : On place l'index dans de le tableau qui sera couper 
  * en 5 ou 7 parties selon le nombre d'arguments. 
  * Et l'initialisera a la variable group.
@@ -56,9 +56,10 @@ int	get_group(t_stack *stack, int *tab, int size)
  * 	Etape 3 : Puis on utilise la variable mediane pour agir sur les index donné,
  * groupe par groupe.
  * 	Etape 4 : On diminue la variable size pour que lorsque elle arrive a 0 
- * on passe au groupe suivant.
- * 	Etape 5 : Il calcule la taille de la liste pour savoir ce qu'il reste
- * comme groupe a gerer.
+ * nous avons tout trier dans la stack b.
+ *  Puisque nous avons un calcul de median qui se fait 
+ * a chaque passage dans la boucle .
+ * 	Etape 5 : Il calcule la taille de la liste pour savoir ce qu'il reste.
  * 	Etape 6 : A la fin Tout ce qu'il y a dans stack_b est remis dans la stack_a 
  * par la fonction  max_stack_b_push_a.
  * Le tri est terminer
