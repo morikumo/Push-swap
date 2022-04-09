@@ -43,28 +43,35 @@ int	ft_white_space(char c)
 /**
  * @brief Verifie si l'argument passé au programme est bon. 
  * Avec comme limites INT_MIN et INT_MAX.
+ * si le dernier arg est un '-'
+ * 
  * 
  * @param str 
  */
-void	check_str(char *str)
+int	check_str(char *str)
 {
 	int		i;
+	int		size;
 	long	stock;
 
-
 	i = 0;
+	size = 0;
 	while (str[i])
 	{
+		size = ft_strlen(str);
 		stock = ft_atol(str);
-		if(!stock)
-			zero(0);
+		if (str[size - 1] == '-')
+			return (1);
+		if (!stock)
+			return (0);
 		if (stock > 2147483647 || stock < -2147483648)
-			zero(0);
+			return (0);
 		if (ft_isdigit(str[i]) == 0
 			&& ft_white_space(str[i]) && str[i] != '-')
-			zero(0);
+			return (0);
 		i++;
 	}
+	return (0);
 }
 
 /**

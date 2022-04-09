@@ -19,6 +19,25 @@
  * @param av 
  * @return t_stack* 
  */
+int	count(char *s)
+{
+	int		i;
+	int		minus;
+
+	i = 0;
+	minus = 0;
+	while (s[i])
+	{
+		if (s[i] == '-')
+			minus++;
+		i++;
+	}
+	if (minus > 1)
+		return (1);
+	else
+		return (0);
+}
+
 t_stack	*new_element_tab(char **av)
 {
 	int		j;
@@ -31,18 +50,18 @@ t_stack	*new_element_tab(char **av)
 	j = 0;
 	while (tab[j])
 	{
-		//check_str(tab[j]);
-		if (check_str(tab[j]) && (!stack_a))
+		if (count(tab[j]) == 1 || check_str(tab[j]) == 1)
+			error_exit_free(0, tab, stack_a);
+		else if (!stack_a)
 		{
-			stack_a = new_element(ft_atol(tab[j]));
+			stack_a = new_element(ft_atol(tab[j++]));
 			tmp = stack_a;
 		}
-		else if (check_str(tab[j]))
+		else
 		{
-			tmp->next = new_element(ft_atol(tab[j]));
+			tmp->next = new_element(ft_atol(tab[j++]));
 			tmp = tmp->next;
 		}
-		j++;
 	}
 	free_str(tab);
 	return (stack_a);
@@ -63,7 +82,7 @@ t_stack	*init(char **av)
 	{
 		if (check_next(stack_a) == 1)
 		{
-			free(stack_a);
+			free_stack(stack_a);
 			error_exit(0);
 		}
 		check_doublon(stack_a);

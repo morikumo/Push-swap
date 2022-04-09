@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 
 /*------------------------- STRUCTURE DE MA LISTE ----------------------*/
 
@@ -81,13 +82,13 @@ t_stack		*max_up_list(t_stack *stack_a);
 
 int			ft_isdigit(char s);
 int			ft_white_space(char c);
-void		check_str(char *str);
+int			check_str(char *str);
 void		check_doublon(t_stack *stack_a);
 int			check_next(t_stack *stack_a);
 int			error_(int a);
 int			error_exit(int a);
-int			error_exit_free(int a, t_stack *stack_a);
-int			zero(int a);
+int			error_exit_free(int a, char **tab, t_stack *stack_a);
+size_t		ft_strlen(const char *s);
 
 /*----------------------------------------------------------------------*/
 

@@ -25,6 +25,20 @@ t_stack	*free_stack(t_stack *stack_a)
 	return (stack_a);
 }
 
+void	printnode(t_stack *start)
+{
+	printf("\n");
+       t_stack *temp;
+
+        temp = start;
+        while(temp)
+        {
+                printf("%ld \n", (long int)temp->nbr);
+                temp = temp->next;
+        }
+		printf("\n");
+}
+
 int	main(int ac, char **av)
 {
 	t_stack		*stack_a;
@@ -36,7 +50,6 @@ int	main(int ac, char **av)
 	if (ac > 2)
 		return (0);
 	stack_a = init(av);
-	printf("sortie\n");
 	if (stack_a)
 	{
 		size = len_list(stack_a);

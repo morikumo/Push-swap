@@ -12,6 +12,16 @@
 
 #include "push_swap.h"
 
+size_t	ft_strlen(const char *s)
+{
+	size_t				len;
+
+	len = 0;
+	while ((unsigned char)s[len])
+		len++;
+	return (len);
+}
+
 int	error_(int a)
 {
 	if (a == 0)
@@ -29,21 +39,14 @@ int	error_exit(int a)
 	return (0);
 }
 
-int	error_exit_free(int a, t_stack *stack_a)
+int	error_exit_free(int a, char **tab, t_stack *stack_a)
 {
 	if (a == 0)
 	{
 		ft_putstr("Error\n");
-		free(stack_a);
+		free_str(tab);
+		free_stack(stack_a);
 		exit(0);
 	}
 	return (0);
 }
-
-int	zero(int a)
-{
-	if (a == 0)
-		return (0);
-	return(0);
-}
-

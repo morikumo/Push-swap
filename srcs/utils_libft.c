@@ -76,24 +76,23 @@ int	len_list(t_stack *stack_a)
 long	ft_atol(const char *str)
 {
 	int		i;
-	int		negatif;
+	long	negatif;
 	long	resultat;
 
-	i = -1;
+	i = 0;
 	negatif = 1;
 	resultat = 0;
-	while (str[++i])
+	while (str[i])
 	{
-		if (!((ft_isdigit(str[i]) == 1) || (str[i] == '-')
-				|| (str[i] == ' ')))
-			return (0);
-		else if (i != 0 && str[i - 1] && str[i] && str[i+1]  && str[i] == '-' && (!(ft_isdigit(str[i + 1]) == 1)
-				|| (ft_isdigit(str[i - 1]) == 1)))
-			return (0);
-		else if (str[i] == '-')
+		if (str[i] == '-')
+		{
 			negatif = -negatif;
-		if (ft_isdigit(str[i]) == 1)
+		}
+		else if (ft_isdigit(str[i]) == 1)
+		{
 			resultat = resultat * 10 + str[i] - 48;
+		}
+		i++;
 	}
 	if (((negatif * resultat) > (2147483647))
 		|| ((negatif * resultat) < (-2147483648)))
