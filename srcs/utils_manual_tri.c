@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_manual_tri.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:21:57 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 17:23:40 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/09 19:19:41 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ int	max_pos(t_stack *stack_a)
 	while (stack_a)
 	{
 		if (stack_a->nbr > stock)
-		{
 			stock = stack_a->nbr;
-		}
 		stack_a = stack_a->next;
 	}
 	while (tmp->nbr != stock)
@@ -64,9 +62,7 @@ int	min_pos(t_stack *stack_a)
 	while (stack_a)
 	{
 		if (stack_a->nbr < stock)
-		{
 			stock = stack_a->nbr;
-		}
 		stack_a = stack_a->next;
 	}
 	while (tmp->nbr != stock)

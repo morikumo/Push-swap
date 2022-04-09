@@ -96,6 +96,6 @@ long	ft_atol(const char *str)
 	}
 	if (((negatif * resultat) > (2147483647))
 		|| ((negatif * resultat) < (-2147483648)))
-		return (error_(0));
+		return (0);
 	return (resultat * negatif);
 }

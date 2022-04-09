@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 15:46:24 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 15:51:31 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/09 19:22:15 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int	get_group(t_stack *stack, int *tab, int size)
 
 	tab = tab_int(stack, size);
 	tab = value_pos(tab, size);
-	if (size >= 150)
+	if (size >= 500)
+		index = size / 7;
+	else if (size >= 150 && size <= 500)
 		index = size / 15;
 	else if (size <= 150 && size >= 50)
 		index = size / 7;
@@ -81,9 +83,9 @@ t_stack	*push_by_group(t_stack *stack_a, t_stack *stack_b, int size)
 	while (stack_a)
 	{
 		tmp = stack_a;
+		median = get_group(tmp, tab, size);
 		while (size)
 		{
-			median = get_group(tmp, tab, size);
 			if (tmp->nbr <= median)
 			{
 				stack_b = push_b(tmp, stack_b);
