@@ -6,7 +6,7 @@
 /*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:03:36 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 16:05:33 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/09 17:31:16 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ t_stack	*init(char **av)
 {
 	t_stack	*stack_a;
 
+	if (av == NULL)
+		error_exit(0);
 	stack_a = new_element_tab(av);
 	if (stack_a)
 	{

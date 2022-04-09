@@ -20,7 +20,7 @@ AR				= ar rcs
 				@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
 $(NAME):		$(OBJS)
-				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L. -g
+				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L.
 				@echo -ne '\033[32m                            (0%)\r'
 				@sleep 1
 				@echo -ne '#####                      (33%)\r'
@@ -66,5 +66,3 @@ wnormin:
 	watch norminette	./srcs
 
 .PHONY:			all clean fclean c.o re
-
--fsanitize=address -g3
