@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:13:51 by mabid             #+#    #+#             */
-/*   Updated: 2022/04/06 16:13:54 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/12 14:49:20 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ int	error_exit(int a)
 		ft_putstr("Error\n");
 		exit(0);
 	}
+	return (0);
+}
+
+int	error_exit2(int a)
+{
+	if (a == 0)
+		exit(0);
 	return (0);
 }
 

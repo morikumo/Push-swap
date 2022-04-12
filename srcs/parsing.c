@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:03:36 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 16:05:33 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/12 14:55:05 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,13 @@ t_stack	*init(char **av)
 {
 	t_stack	*stack_a;
 
-	if (av == NULL)
-		error_exit(0);
 	stack_a = new_element_tab(av);
 	if (stack_a)
 	{
 		if (check_next(stack_a) == 1)
 		{
 			free_stack(stack_a);
-			error_exit(0);
+			error_exit2(0);
 		}
 		check_doublon(stack_a);
 	}

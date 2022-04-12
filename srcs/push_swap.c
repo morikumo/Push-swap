@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:05:52 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 16:44:03 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/12 14:50:09 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac > 2 || ac < 2)
-		error_exit(0);
+		error_exit2(0);
 	stack_a = init(av);
 	if (!stack_a)
 		error_exit(0);

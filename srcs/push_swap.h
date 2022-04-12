@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabid <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mabid <mabid@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 16:45:08 by mabid             #+#    #+#             */
-/*   Updated: 2022/03/15 16:56:27 by mabid            ###   ########.fr       */
+/*   Updated: 2022/04/12 14:49:51 by mabid            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void		check_doublon(t_stack *stack_a);
 int			check_next(t_stack *stack_a);
 int			error_(int a);
 int			error_exit(int a);
+int			error_exit2(int a);
 int			error_exit_free(int a, char **tab, t_stack *stack_a);
 size_t		ft_strlen(const char *s);
 
